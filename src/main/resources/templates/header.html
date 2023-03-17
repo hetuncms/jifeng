@@ -1,0 +1,18 @@
+<header class="header" th:fragment="header">
+    <div class="hd hdw">
+        <div class="head">
+            <div class="lf">
+                <img src="https://jifengbifen.oss-cn-hangzhou.aliyuncs.com/advert/117180439292079820241026021172706032.png" alt="">
+                <a href="/"  th:class="${not requestUrl.startsWith('/basketball') and not requestUrl.startsWith('/football')?'active':''}">
+                    <span>首页</span>
+                </a>
+                <a href="/basketball" th:class="${requestUrl.startsWith('/basketball')?'active':''}">
+                    <span>篮球</span>
+                </a>
+                <a href="/football"  th:class="${requestUrl.startsWith('/football')?'active':''}">
+                    <span>足球</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

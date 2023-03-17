@@ -1,0 +1,47 @@
+<html lang="zh-CN">
+<head>
+    <th:block th:insert="~{meta}"></th:block>
+    <link th:href="@{/emjdjd/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+
+
+<body>
+<th:block th:insert="~{header::header}"/>
+<main class="main">
+    <div th:replace="~{ad/top_ad}"></div>
+    <div th:replace="~{ad/announcement_ad}"></div>
+    <div class="content">
+        <div class="date_tab">
+            <a th:each="date:${date_list}"
+               th:href="${list_type_url}+'/'+${#dates.format(date,'yyyy-MM-dd')}">
+                <div th:text="${#dates.format(date,'MM-dd')}" class="date"/>
+                <th:block th:switch="${#dates.dayOfWeek(date)}" class="week">
+                    <span>
+                        星期
+                        <span th:case="2" th:text="一"></span>
+                        <span th:case="3" th:text="二"></span>
+                        <span th:case="4" th:text="三"></span>
+                        <span th:case="5" th:text="四"></span>
+                        <span th:case="6" th:text="五"></span>
+                        <span th:case="7" th:text="六"></span>
+                        <span th:case="1" th:text="日"></span>
+                    </span>
+                </th:block>
+            </a>
+        </div>
+
+        <th:block th:if="${showType eq 0}" th:insert="~{list::listFragment}"></th:block>
+    </div>
+</main>
+<th:block th:insert="~{footer::footer}"></th:block>
+<div th:replace="~{ad/between_ad::left_ad}"></div>
+<div th:replace="~{ad/between_ad::right_ad}"></div>
+<div th:replace="~{ad/bottom_ad}"></div>
+<div th:replace="~{ad/js_ad}"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script th:src="@{/emjdjd/js/transfer.js}"></script>
+<script th:src="@{/emjdjd/js/public.js}"></script>
+</body>
+</html>

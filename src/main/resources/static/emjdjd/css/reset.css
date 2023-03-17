@@ -1,0 +1,394 @@
+* {
+	/*取消默认样式,强制换行,默认过渡*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: none;
+	overflow-wrap: break-word;
+	transition: all .25s, font-size 0s, color 0s;
+	border-radius: 0;
+}
+
+:root,
+html {
+	/* 统一字体 边框 */
+	--border_size: .0313rem;
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+	/*允许元素百分比高度*/
+	height: 100%;
+}
+
+body {
+	/*优化行高，关闭亚像素抗锯齿*/
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+audio,
+progress {
+	/*限宽防越界 统一显示 统一对齐*/
+	display: inline-block;
+	vertical-align: top;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+a {
+	/*取消元素独立字样 统一表现*/
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	height: auto;
+}
+
+a {
+	/*去除链接样式*/
+	outline: none;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+	background: transparent;
+}
+
+/*取消外线*/
+a:active,
+a:hover,
+input:focus {
+	outline: none;
+}
+
+/* 隐藏所有滚动条 */
+/* *::-webkit-scrollbar {
+	display: none;
+} */
+
+input[type="submit"],
+input[type="reset"],
+[btn],
+.btn {
+	cursor: pointer;
+}
+
+[f0],
+.f0 {
+	/* 取消换行符 */
+	font-size: 0;
+}
+
+[f0]>*,
+.f0>* {
+	/* 取消换行符 */
+	font-size: 1rem;
+}
+
+/* 还原字体 */
+[before],
+[after] {
+	/* 伪元素 */
+	position: relative;
+}
+
+[before]::before,
+[after]::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	/* 语义化元素display */
+	display: block;
+}
+
+template {
+	/* 隐藏模板 */
+	display: none;
+}
+
+abbr[title] {
+	/* 缩写标签 下划线 */
+	border-bottom: var(--border_size) dotted;
+}
+
+b,
+strong,
+optgroup {
+	/* 粗体 */
+	font-weight: bold;
+}
+
+dfn {
+	/* 斜体 */
+	font-style: italic;
+}
+
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	/* 标记统一 */
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	/* 小字 */
+	font-size: 80%;
+}
+
+sub,
+sup {
+	/* 上下标 */
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	/* 上标 */
+	top: -0.5em;
+}
+
+sub {
+	/* 下标 */
+	bottom: -0.25em;
+}
+
+svg:not(:root) {
+	/* 防越界 */
+	overflow: hidden;
+}
+
+figure {
+	/* 独立块 */
+	margin: 1em 2.5rem;
+}
+
+hr {
+	/* 统一分割线 */
+	height: var(--border_size);
+	background: currentColor;
+}
+
+pre,
+textarea {
+	/* 代码块与文本域换行 */
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	/* 等宽字体 */
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	/* 取消默认变体 */
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],button.disabled,
+[btn][disabled],[btn].disabled,
+.btn[disabled],.btn.disabled,
+input[disabled],input.disabled {
+	/* 禁用标识 */
+	cursor: not-allowed;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	/* 取消火狐外线 */
+	border: 0;
+	padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	/* 内边距算入宽高 */
+	box-sizing: border-box;
+}
+
+input[type="search"] {
+	/* 统一表现 */
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	/* 删除自带搜索按钮 */
+	-webkit-appearance: none;
+}
+
+fieldset {
+	/* 统一表现 */
+	border: var(--border_size) solid #c0c0c0;
+	margin: 0.125rem;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+table {
+	/* 表格边框合并 */
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.hidden,
+[hidden] {
+	/* 隐藏元素 */
+	display: none !important;
+}
+
+[pre] a {
+	color: #1e90ff;
+}
+
+[pre] a:hover {
+	box-shadow: 0 calc(var(--border_size) * 1.5) 0;
+}
+
+[pre] a:visited {
+	color: #1866b3;
+}
+
+[pre] select {
+	border: .1em solid #f3f3f3;
+	padding: .4em .8em;
+}
+
+[pre] input[type=text],
+[pre] input[type=password] {
+	background: #fff;
+	box-shadow: 0 0 0 .01rem inset;
+}
+
+[pre] input[type=range] {
+	/* input 滑动条 */
+	height: 1.5rem;
+	background-color: transparent;
+	appearance: none;
+	padding: 0;
+	vertical-align: middle;
+}
+
+[pre] input[type=range]::-webkit-slider-runnable-track {
+	/*滑轨*/
+	background: #2980b9;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+[pre] input[type=range]::-webkit-slider-thumb {
+	/*滑块*/
+	appearance: none;
+	width: 20%;
+	height: 100%;
+	background: #3498db;
+	cursor: pointer;
+}
+
+[pre] button:hover,
+[btn]:hover,
+.btn:hover {
+	/* 按钮hover */
+	filter: brightness(.9);
+}
+
+/* 默认样式 */
+button,
+[btn],
+.btn {
+	background: #f0f0f0;
+}
+
+button,
+[btn],
+.btn,
+input {
+	padding: .3em 1em .4em;
+}
+
+code{
+	white-space:pre;
+}
+
+code{
+	display: block;
+	background: #f0f0f0;
+	margin: 1rem .5rem;
+}
+
+table th,
+table td {
+	border: var(--border_size) solid;
+	border-right: none;
+	border-bottom: none;
+	padding: .2em .5em .3em;
+}
+
+table tr:last-child td{
+	border: var(--border_size) solid;
+}
+table th:last-child{
+	border-right: var(--border_size) solid;
+}
+
+img,
+picture,
+canvas{
+	width:6.25rem;
+	height:6.25rem;
+}

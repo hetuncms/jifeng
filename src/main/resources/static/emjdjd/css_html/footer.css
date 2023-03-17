@@ -1,0 +1,62 @@
+:root{/* 底栏 footer */
+    --footer_bg:#2f2f3d;
+    --footer_text:#9194a2;
+    --footer_text_hover:#fea73a;
+    --footer_border:#383848;
+}
+.footer{
+    background: var(--footer_bg);
+    color: var(--footer_text);
+}
+.footer .top{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    font-size: 12px;
+    flex-wrap: wrap;
+}
+.footer .top .lf{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+.footer .top h3{
+    color: #fff;
+    margin-bottom: 10px;
+}
+.footer .top .lf .links{
+    width: 250px;
+}
+.footer .top .lf p{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .top .lf p span{
+    width: 50%;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.footer .top .lf p span:hover{
+    color: var(--footer_text_hover);
+}
+.footer .xian{
+    height: 1px;
+    background: #383848;
+    margin-top: 20px;
+}
+.footer .btm {
+    height: 80px;
+    box-sizing: border-box;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 6px 0;
+}
+.foot .btm p{
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+}

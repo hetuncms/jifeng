@@ -1,0 +1,34 @@
+<div th:fragment="listFragment">
+  <div class="data_list">
+      <li class="item" th:each="item,count:${list}">
+          <time class="time" th:text="${#dates.format(item.getMatchStartTime(),'HH:mm')}"></time>
+          <a class="game_name" th:title="${item.gameName}">
+            <img src="data:image/png;base64,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"/>
+            <span th:if="${item.getLeagueResult()}" th:text="${item.getLeagueResult().name_zh_abbr}"></span>
+          </a>
+          <a class="link vs_box" th:href="'/live/'+${item.getId()}" title="" target="_blank">
+              <div class="left">
+                  <span th:text="${item.leftName}"></span>
+                  <img class="lazyload" th:attr="data-src=${item.leftImg}">
+              </div>
+              <div class="center score_box">
+                <span class="score" th:if="${not #lists.isEmpty(item.mainScore)}" th:text="${item.mainScore.get(0)+':'+item.visitingScore.get(0)}"></span>
+                <span class="text" th:if="${#lists.isEmpty(item.mainScore)}">vs</span>
+              </div>
+              <div class="right">
+                  <img class="lazyload" th:attr="data-src=${item.rightImg}">
+                  <span th:text="${item.rightName}"></span>
+              </div>
+          </a>
+          <div class="button link">高清直播</div>
+      </li>
+  </div>
+  <div th:if="${page_count>1}" style="display: flex;justify-content: center;flex-wrap: wrap">
+    <ul class="pagination">
+      <li th:each="i: ${#numbers.sequence(1, page_count)}">
+        <a th:href="${data_base_url}+'/'+${i}" th:text="${i}"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+

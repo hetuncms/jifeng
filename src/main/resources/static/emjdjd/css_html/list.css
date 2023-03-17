@@ -1,0 +1,113 @@
+:root{/* 列表 */
+    --list_item_hover_bg:#fbfafa;
+    --list_item_bg:#fff;
+
+    --list_border:#f1f2f6;
+    --list_text:#333;
+    --list_text_hover:transparent;
+    --list_omit:transparent;
+
+    --list_button_text:transparent;
+    --list_button_bg:transparent;
+    --list_button_hover_bg:transparent;
+    --list_button_active_bg:transparent;
+    --list_button_active_hover_bg:transparent;
+}
+/* 列表样式*/
+.data_list{
+    box-shadow: 0 0 0 1px var(--page_border);
+    background: var(--nav_bg);
+    overflow: hidden;
+    padding: 0 10px;
+}
+.data_list .item{
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0 0 1px var(--page_border);
+    align-items: center;
+    background: var(--nav_bg);
+    padding: 20px 20px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+.data_list .item:hover{
+    box-shadow: -2px 0 20px 0 #d7d8df;
+    border-radius: 4px;
+}
+.data_list .item .time{
+    margin-right: 20px;
+}
+.data_list .item .game_name img{
+    margin-right: 7px;
+}
+.data_list .item .game_name span{
+    font-weight: bold;
+    width: 135px;
+    display: inline-block;
+}
+.data_list .item img{
+    --size:20px;
+    width: var(--size);height: var(--size);
+}
+.data_list .item .left img,
+.data_list .item .right img{
+    --size:30px;
+    --margin:5px;
+}
+.data_list .item .left img{
+    margin-left: var(--margin);
+}
+.data_list .item .right img{
+    margin-right: var(--margin);
+}
+.data_list .vs_box{
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+.data_list .vs_box>*{
+    display: flex;
+    align-items: center;
+    width: 180px;
+}
+.data_list .vs_box .left{
+    justify-content: right;
+}
+.data_list .vs_box .right{
+    justify-content: left;
+}
+.data_list .vs_box .center{
+    margin: 0 10px;
+    font-size: 20px;
+    width: 4em;
+    justify-content: center;
+}
+.data_list .button.link{
+    display: none;
+    transition: .2s;
+}
+.data_list .link:hover{
+    /*color: var(--nav_active_text);*/
+}
+
+/* 分页样式 */
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}

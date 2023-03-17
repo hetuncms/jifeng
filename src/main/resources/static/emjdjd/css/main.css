@@ -1,0 +1,53 @@
+@import 'reset.css';
+@import 'adapt.css';
+@import '../css_html/header.css';
+@import '../css_html/list.css';
+@import '../css_html/footer.css';
+:root{/* 页面 */
+    --page_bg:#f6f6f6;
+    --page_border:#e2e3e8;
+}
+
+html,body{
+    background: var(--page_bg);
+}
+main{
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.content{
+    max-width: 960px;
+}
+/* 日期选项卡 */
+.date_tab{
+    background: var(--nav_bg);
+    color: var(--nav_text);
+    display: flex;
+    padding: 20px 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 0 1px var(--page_border);
+    justify-content: space-around;
+}
+.date_tab a{
+    transition: all .2s ease;
+    box-sizing: border-box;
+    padding: 10px 0;
+    width: 76px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.date_tab a:hover{
+    color: var(--nav_bg);
+    background: var(--nav_active_text);
+}
+.date_tab .date{
+    font-weight: bold;
+    font-size: 120%;
+}
