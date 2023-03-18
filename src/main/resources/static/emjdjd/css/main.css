@@ -3,6 +3,7 @@
 @import '../css_html/header.css';
 @import '../css_html/list.css';
 @import '../css_html/footer.css';
+@import '../css_html/bofang.css';
 :root{/* 页面 */
     --page_bg:#f6f6f6;
     --page_border:#e2e3e8;

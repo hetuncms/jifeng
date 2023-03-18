@@ -1,0 +1,44 @@
+.content.bofang{
+    margin: 40px auto 80px auto;
+}
+.info_box{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    text-align: center;
+    background: var(--nav_active_text);
+    border-radius: 10px;
+    padding: 30px 170px;
+    color: var(--nav_bg);
+    margin: 0px auto 40px auto;
+    box-shadow: 0 0 5px 0px var(--footer_bg);
+}
+.info_box img{
+    border-radius: 50%;
+}
+.info_box>.center{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 25px;
+}
+.info_box>.center .time{
+    display: block;
+    font-size: 15px;
+    transform: translateY(-55px);
+}
+.info_box>.center .vs_score{
+    transform: translateY(-10px);
+}
+.info_box>.center>div{
+    width: 100%;
+}
+.info_box>.left,.info_box>.right{
+    width: 200px;
+}
+#my-video{
+    width: 100%;
+    min-height: 56vh;
+    box-shadow: 0 0 10px 1px var(--footer_bg),0 10px 10px var(--footer_bg);
+}
