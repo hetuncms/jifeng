@@ -33,6 +33,7 @@
         </div>
 
         <th:block th:if="${showType eq 0}" th:insert="~{list::listFragment}"></th:block>
+        <th:block th:if="${showType eq 0}" th:insert="~{pagination::pagination}"></th:block>
     </div>
 </main>
 <th:block th:insert="~{footer::footer}"></th:block>

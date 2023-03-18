@@ -2,6 +2,7 @@
 @import 'adapt.css';
 @import '../css_html_wap/header.css';
 @import '../css_html_wap/list.css';
+@import '../css_html/pagination.css';
 @import '../css_html_wap/footer.css';
 @import '../css_html_wap/bofang.css';
 :root{/* 页面 */

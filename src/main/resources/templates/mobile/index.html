@@ -33,6 +33,7 @@
         </div>
 
         <th:block th:if="${showType eq 0}" th:insert="~{mobile/listwap::listFragment}"></th:block>
+        <th:block th:if="${showType eq 0}" th:insert="~{pagination::pagination}"></th:block>
     </div>
 </main>
 <th:block th:insert="~{mobile/footer::footer}"></th:block>

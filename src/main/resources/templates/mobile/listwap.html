@@ -25,12 +25,5 @@
             <div class="button link">高清直播</div>
         </li>
     </div>
-    <div th:if="${page_count>1}" style="display: flex;justify-content: center;flex-wrap: wrap">
-        <ul class="pagination">
-            <li th:each="i: ${#numbers.sequence(1, page_count)}">
-                <a th:href="${data_base_url}+'/'+${i}" th:text="${i}"></a>
-            </li>
-        </ul>
-    </div>
 </div>
 
