@@ -6,92 +6,36 @@
 
 
 <body>
-<th:block th:insert="mobile/header::header"></th:block>
+<th:block th:insert="~{mobile/header::header}"/>
 <main class="main">
     <div th:replace="~{ad/top_ad}"></div>
     <div th:replace="~{ad/announcement_ad}"></div>
-    <div style="display: flex;justify-content: space-around;border: 1px solid #e2e3e8;border-radius: 4px;margin-bottom: 10px;margin-top: 10px">
+    <div class="content">
+        <div class="date_tab">
+            <img class="left_arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAoCAYAAAD6xArmAAADcUlEQVRIS63W/WsURxgH8GcaveqqSbS+7FqttcUWK0VRilKKopegVq1WabQohYrM3O4FQcRfBCnrD0pD8AJHQ2aRIoKIb/iuNcWoRRH9Qej/IaWtba25m3zLyHo8Xi53e3fd3/aO+fCdl33mEURE3d3d84eHh48QUSaKoj/sb80+IpPJvDsyMnKPiN4hokft7e2dPT09z5qGlVL3AKx8BQkhHrS0tKzr7+//qxlcSCnfF0JY/G2G/wJgfRRF/zSKCzswm81+UCgU7hKRx/Ahx3E25nK5543gL2H7BEGw0BhzF8BMBg16nrc5DMN/68VLcJx8UZx8OoNuep63JQzD4Xrw12A7UCm1GMAQEU1jy3IVwLYoigpJ8VGwHSilXEpEt4moneEXXdftCsOwmASvCMdr/kmxWPyZiNoYdK6jo+Prrq4uUwsfE7YDfd9fYYwZJKIpLPlp13V3hWE4Ug2vCsfL8hkR/UREkxh+0nXdb6vhNeE4+SpjzA0icljKH7XWe4QQqJQ8ERyfljSAa0Q0gUFaa+1XwhPDFstkMmsBXAbwJluWH7TW3eWp64Lj5J8DuEhEKYb3aa33cbxuOF7zL4wx54loPMN7tdYHSu+1zuNY/yulthLRGQDjGH5Ua33QvjeU+BWklNoO4BQRtTD8sNb6u6bgeEN3AjgJ4A2GH/o/4C8BnC1bku+bgpVSmwBcKNvEY1rr/Q3Dvu+vN8ZcKjt2ea313oY3TynVCeAK/wqFEAP2K2z4uEkpVwshrgOYyI7ica215J92XUuhlFoJwBYjXulODAwM7C6vF4nhIAg+NcbcAjCZHatTrut+U6l8JoKllMuFEIMAWhl6Jp1O7xzrNqkJ+76/zBhj7z9+RV3wPG9HtfuvKhwEwRJjzBCAqSypLZtf1bqxx4SllB8LIe4AeIvt/nXP87Ym6TEqwkqpjwDYlmsGS3orlUptzufzL5JUxFGw7/sfGmNsWzuLobdd191YT6v1GqyUWhAnnc1Q289tqLfzLMG+778XJ53Dpnq/tbV1XW9v799Jpj/qaspms/MKhYKd/jyW9GFbW9vaRrt7EQTB3GKxaNH5DH2cSqU68/n8n/UmLRlSSrv7qxjwxHGcdF9f3++Noi/Lpu3mbWIArhDiV8dx1uRyud+aQUv1OO7m8wB2RFH0tFnUjv8PgnJyprkBd90AAAAASUVORK5CYII=" alt="&lt;">
+            <a th:each="index:${#numbers.sequence(0,6)}"
+               th:href="${list_type_url}+'/'+${#dates.format(date_list[index],'yyyy-MM-dd')}">
+                <div th:text="${#dates.format(date_list[index],'MM-dd')}" class="date"/>
+                <th:block th:switch="${#dates.dayOfWeek(date_list[index])}" class="week">
+                    <span class="f0">
+                        <span>周</span>
+                        <span th:case="2" th:text="一"></span>
+                        <span th:case="3" th:text="二"></span>
+                        <span th:case="4" th:text="三"></span>
+                        <span th:case="5" th:text="四"></span>
+                        <span th:case="6" th:text="五"></span>
+                        <span th:case="7" th:text="六"></span>
+                        <span th:case="1" th:text="日"></span>
+                    </span>
+                </th:block>
+            </a>
+            <img class="right_arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAoCAYAAAD6xArmAAADcUlEQVRIS63W/WsURxgH8GcaveqqSbS+7FqttcUWK0VRilKKopegVq1WabQohYrM3O4FQcRfBCnrD0pD8AJHQ2aRIoKIb/iuNcWoRRH9Qej/IaWtba25m3zLyHo8Xi53e3fd3/aO+fCdl33mEURE3d3d84eHh48QUSaKoj/sb80+IpPJvDsyMnKPiN4hokft7e2dPT09z5qGlVL3AKx8BQkhHrS0tKzr7+//qxlcSCnfF0JY/G2G/wJgfRRF/zSKCzswm81+UCgU7hKRx/Ahx3E25nK5543gL2H7BEGw0BhzF8BMBg16nrc5DMN/68VLcJx8UZx8OoNuep63JQzD4Xrw12A7UCm1GMAQEU1jy3IVwLYoigpJ8VGwHSilXEpEt4moneEXXdftCsOwmASvCMdr/kmxWPyZiNoYdK6jo+Prrq4uUwsfE7YDfd9fYYwZJKIpLPlp13V3hWE4Ug2vCsfL8hkR/UREkxh+0nXdb6vhNeE4+SpjzA0icljKH7XWe4QQqJQ8ERyfljSAa0Q0gUFaa+1XwhPDFstkMmsBXAbwJluWH7TW3eWp64Lj5J8DuEhEKYb3aa33cbxuOF7zL4wx54loPMN7tdYHSu+1zuNY/yulthLRGQDjGH5Ua33QvjeU+BWklNoO4BQRtTD8sNb6u6bgeEN3AjgJ4A2GH/o/4C8BnC1bku+bgpVSmwBcKNvEY1rr/Q3Dvu+vN8ZcKjt2ea313oY3TynVCeAK/wqFEAP2K2z4uEkpVwshrgOYyI7ica215J92XUuhlFoJwBYjXulODAwM7C6vF4nhIAg+NcbcAjCZHatTrut+U6l8JoKllMuFEIMAWhl6Jp1O7xzrNqkJ+76/zBhj7z9+RV3wPG9HtfuvKhwEwRJjzBCAqSypLZtf1bqxx4SllB8LIe4AeIvt/nXP87Ym6TEqwkqpjwDYlmsGS3orlUptzufzL5JUxFGw7/sfGmNsWzuLobdd191YT6v1GqyUWhAnnc1Q289tqLfzLMG+778XJ53Dpnq/tbV1XW9v799Jpj/qaspms/MKhYKd/jyW9GFbW9vaRrt7EQTB3GKxaNH5DH2cSqU68/n8n/UmLRlSSrv7qxjwxHGcdF9f3++Noi/Lpu3mbWIArhDiV8dx1uRyud+aQUv1OO7m8wB2RFH0tFnUjv8PgnJyprkBd90AAAAASUVORK5CYII=" alt="&gt;">
+        </div>
 
-    <a th:each="date:${date_list}"
-       style="width: 76px;height: 60px;;display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 5px;margin-bottom: 5px"
-       th:href="${list_type_url}+'/'+${#dates.format(date,'yyyy-MM-dd')}">
-        <div th:text="${#dates.format(date,'MM-dd')}" style="background: no-repeat"/>
-        <th:block th:switch="${#dates.dayOfWeek(date)}">
-            <span th:case="2" th:text="周一"></span>
-            <span th:case="3" th:text="周二"></span>
-            <span th:case="4" th:text="周三"></span>
-            <span th:case="5" th:text="周四"></span>
-            <span th:case="6" th:text="周五"></span>
-            <span th:case="7" th:text="周六"></span>
-            <span th:case="1" th:text="周日"></span>
-        </th:block>
-    </a></div>
-    <div >
-        <th:block th:insert="~{mobile/listwap::listFragment}">
-        </th:block>
-
+        <th:block th:if="${showType eq 0}" th:insert="~{mobile/listwap::listFragment}"></th:block>
     </div>
 </main>
-<div class="toTop"></div>
-<footer class="footer">
-    <div class="m-footer-content">
-        <div class="site-nav">
-            <div class="f-text">网站导航：</div>
-            <ul>
-                <li>
-                    <a target="_blank" href="/lanqiu/nba" title="NBA">
-                        NBA直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="英超">
-                        英超直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="意甲">
-                        意甲直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="德甲">
-                        德甲直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/lanqiu/cba" title="CBA">
-                        CBA直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="西甲">
-                        西甲直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="法甲">
-                        法甲直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/zuqiu/" title="中超">
-                        中超直播
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="/lanqiu/wnba" title="WNBA">
-                        WNBA直播
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>
-                9球体育直播全程提供NBA直播,CBA直播,中超直播,五大联赛直播,CCTV5在线直播等热门体育赛事免费高清视频直播信号，看比赛上9球直播nba在线观看！</p>
-            <p>Copyright © 9球体育直播. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+<th:block th:insert="~{mobile/footer::footer}"></th:block>
 <div th:replace="~{ad/between_ad::left_ad}"></div>
 <div th:replace="~{ad/between_ad::right_ad}"></div>
 <div th:replace="~{ad/bottom_ad}"></div>

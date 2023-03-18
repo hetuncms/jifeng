@@ -27,33 +27,45 @@
     box-shadow: 0 0 0 1px var(--page_border);
     align-items: center;
     background: var(--nav_bg);
-    padding: 20px 20px;
+    padding: 40px 20px 28px 20px;
     box-sizing: border-box;
     margin: 10px 0;
     border-radius: 2px;
+    position: relative;
 }
 .data_list .item:hover{
     box-shadow: -2px 0 20px 0 #d7d8df;
     border-radius: 4px;
 }
-.data_list .item .time{
-    margin-right: 20px;
+.data_list .item .left_top{
+    position: absolute;
+    left: 7px;
+    right: 8px;
+    top: 3px;
+    display: flex;
+    justify-content: space-between;
 }
-.data_list .item .game_name img{
-    margin-right: 7px;
+.data_list .item .time{
+}
+.data_list .item .game_name{
+    display: flex;
+    align-items: center;
 }
 .data_list .item .game_name span{
-    font-weight: bold;
-    width: 135px;
+    width: 4em;
     display: inline-block;
+    margin-left: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .data_list .item img{
-    --size:20px;
+    --size:1em;
     width: var(--size);height: var(--size);
 }
 .data_list .item .left img,
 .data_list .item .right img{
-    --size:30px;
+    --size:1em;
     --margin:5px;
 }
 .data_list .item .left img{
@@ -65,12 +77,13 @@
 .data_list .vs_box{
     display: flex;
     align-items: center;
-    width: 500px;
+    width: max-content;
 }
 .data_list .vs_box>*{
     display: flex;
     align-items: center;
-    width: 180px;
+    width: 110px;
+    width: 30vw;
 }
 .data_list .vs_box .left{
     justify-content: right;
@@ -80,9 +93,15 @@
 }
 .data_list .vs_box .center{
     margin: 0 10px;
-    font-size: 20px;
+    font-size: 17px;
     width: 4em;
     justify-content: center;
+}
+.data_list .vs_box .left span,.data_list .vs_box .right span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: auto;
 }
 .data_list .button.link{
     display: none;

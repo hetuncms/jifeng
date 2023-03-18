@@ -1,22 +1,12 @@
 <div th:fragment="playing">
-
-    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet"/>
-    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
     <video
             id="my-video"
             class="video-js"
             controls
             preload="auto"
-            data-setup="{}"
-    >
+            data-setup="{}">
 <!--        <source th:if="${playurl}" th:src="${playurl.get(0).getUrl()}" type="video/mp4"/>-->
         <source src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8" type="application/x-mpegURL"/>
-        <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-            >supports HTML5 video</a
-            >
-        </p>
+        <p class="vjs-no-js">如果看到这个提示请开启JS或尝试更新浏览器<a href="https://videojs.com/html5-video-support/" target="_blank">浏览器对HTML5 video的支持情况</a></p>
     </video>
 </div>

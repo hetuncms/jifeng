@@ -1,0 +1,45 @@
+:root{/* 导航栏 header*/
+    --nav_bg:#fff;
+    --nav_active_bg:#fff;
+    --nav_text:#000;
+    --nav_active_text:#fea73a;
+}
+.hdw{
+    background: var(--nav_bg);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}
+.head{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10px 0;
+}
+.head .lf{
+    flex: 0 0 80%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.head .lf img{
+    height: 50px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 5px 0 3px 0;
+}
+.hdw .head .lf a{
+    color: var(--nav_text);
+    padding: 0 30px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+.hdw .head .lf a.active{
+    color: var(--nav_active_text);
+}

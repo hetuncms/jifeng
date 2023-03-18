@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>详情页</title>
     <link th:href="@{/emjdjd/css/main.css}" type="text/css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet"/>
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
 </head>
 <body>
 <th:block th:insert="~{header::header}"/>
@@ -16,8 +18,10 @@
             </div>
             <div class="center">
                 <div>
-                    <time class="time" th:text="${#dates.format(live_info.getData().getMatchStartTime(),'HH:mm')}">11:30</time>
-                    <span th:if="${live_info.getData().getLeagueResult()}" th:text="${live_info.getData().getLeagueResult().getName_zh_abbr()}">NBA</span>
+                    <div class="left_top">
+                        <time class="time" th:text="${#dates.format(live_info.getData().getMatchStartTime(),'HH:mm')}">11:30</time>
+                        <span th:if="${live_info.getData().getLeagueResult()}" th:text="${live_info.getData().getLeagueResult().getName_zh_abbr()}">NBA</span>
+                    </div>
                     <p class="vs_score">
                         <span th:if="${#lists.isEmpty(live_info.getData().getVisitingScore())}">VS</span>
                         <span th:if="${not #lists.isEmpty(live_info.getData().getVisitingScore())}"

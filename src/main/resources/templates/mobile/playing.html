@@ -1,14 +1,11 @@
 <div th:fragment="playing">
-
-    <video-js id="my_video_1" class="vjs-default-skin"
-              playsinline
-              width="1600"
-              height="400"
-              controls preload="auto" style="object-fit: fill;max-width: 100%">
-        <source src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8" type="application/x-mpegURL">
+    <video
+            id="my-video"
+            class="video-js"
+            controls
+            preload="auto"
+            data-setup="{}">
+        <source src="http://kbs-dokdo.gscdn.com/dokdo_300/_definst_/dokdo_300.stream/playlist.m3u8" type="application/x-mpegURL">
+        <p class="vjs-no-js">如果看到这个提示请开启JS或尝试更新浏览器<a href="https://videojs.com/html5-video-support/" target="_blank">浏览器对HTML5 video的支持情况</a></p>
     </video-js>
-
-    <script>
-        var player = videojs('my_video_1');
-    </script>
 </div>
