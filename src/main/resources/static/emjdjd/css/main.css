@@ -64,6 +64,10 @@ main{
     justify-content: space-around;
     border-radius: 5px;
 }
+.date_tab a.active{
+    color: var(--nav_bg);
+    background: var(--nav_active_text);
+}
 .date_tab a:hover{
     color: var(--nav_bg);
     background: var(--nav_active_text);
