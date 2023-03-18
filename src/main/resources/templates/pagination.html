@@ -1,12 +1,11 @@
 <ul class="pagination" th:if="${page_count>1}" th:fragment="pagination">
-  <th:block th:if="${cur_page+7}>${page_count}">
-    <li th:each="i: ${#numbers.sequence(cur_page+1,page_count+1)}">
+    <li th:class="${cur_page == 0 ? 'active first' : 'first' }"><a th:href="${data_base_url}+'/0'">首页</a></li>
+    <li th:each="i: ${#numbers.sequence((cur_page - 4 < 0 ? 0 : cur_page - 4)+1,(cur_page + 4 > page_count ? page_count : cur_page + 4)+1)}"
+        th:class="${cur_page == i - 1 ? 'active' : '' }">
       <a th:href="${data_base_url}+'/'+(${i}-${1})" th:text="${i}"></a>
     </li>
-  </th:block>
-  <th:block th:if="${cur_page+7}<=${page_count}">
-    <li th:each="i: ${#numbers.sequence(cur_page+1,cur_page+7+1)}">
-      <a th:href="${data_base_url}+'/'+(${i}-${1})" th:text="${i}"></a>
+    <li th:if="${page_count > cur_page + 4}">
+      <a>...</a>
     </li>
-  </th:block>
+    <li th:class="${cur_page == page_count ? 'active last' : 'last' }"><a th:href="${data_base_url}+'/'+${page_count}">尾页</a></li>
 </ul>

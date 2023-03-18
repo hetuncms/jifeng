@@ -31,6 +31,7 @@
     box-sizing: border-box;
     margin: 10px 0;
     border-radius: 2px;
+    /*cursor: pointer;*/
 }
 .data_list .item:hover{
     box-shadow: -2px 0 20px 0 #d7d8df;
@@ -88,7 +89,7 @@
     display: none;
     transition: .2s;
 }
-.data_list .link:hover{
+.data_list .item:hover{
     background-color: var(--nav_active_text);
     color: var(--nav_bg);
 }

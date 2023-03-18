@@ -3,18 +3,26 @@ ul.pagination {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 5px;
 }
 
 ul.pagination li {display: inline;}
-ul.pagination li a.active {
-    background-color: #4CAF50;
-    color: white;
+ul.pagination li.active a{
+    background-color: #2f2f3d;
+    color: #fff;
 }
-
-ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+ul.pagination li a:hover{
+    background-color: #ddd;
+}
 ul.pagination li a {
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+}
+ul.pagination .first{
+    margin-right: 5px;
+}
+ul.pagination .last{
+    margin-left: 5px;
 }
